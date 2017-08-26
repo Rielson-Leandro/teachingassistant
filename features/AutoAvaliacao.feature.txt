@@ -17,6 +17,7 @@ Scenario: preenchimento mal sucedido da auto-avaliação
     When “Leo” preenche a sua auto-avaliação
 	And esquece de preencher o campo “Entender conceitos de requisitos”
     Then eu recebo uma mensagem de erro informando o campo que não foi preenchido
+    Then informo para preencher novamente o campo
 
 Scenario: preenchimento mal sucedido da auto-avaliação GUI
     Given que eu estou na página de auto-avaliação
@@ -28,3 +29,8 @@ Scenario: Nenhuma discrepancia
     Given estou na tela de “Auto-Avaliação discrepante”
     When Procuro a lista de alunos
     Then A lista mostrada está vazia
+
+Scenario: discrepancia de 1 aluno
+    Given estou na tela de “Auto-Avaliação discrepante”
+    When Procuro a lista de alunos
+    Then o aluno “João” está na lista
