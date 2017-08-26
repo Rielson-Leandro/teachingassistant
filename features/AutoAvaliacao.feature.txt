@@ -23,3 +23,8 @@ Scenario: preenchimento mal sucedido da auto-avaliação GUI
     When eu submeto a auto-avaliação
 	And não preencho o campo “Entender conceitos de requisitos”
     Then eu recebo uma mensagem de erro informando o campo que não foi preenchido
+
+Scenario: Nenhuma discrepancia
+    Given estou na tela de “Auto-Avaliação discrepante”
+    When Procuro a lista de alunos
+    Then A lista mostrada está vazia
