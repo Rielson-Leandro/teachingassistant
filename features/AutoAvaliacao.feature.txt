@@ -1,0 +1,3 @@
+As a aluno 
+I want to me auto-avaliar
+So that posso comparar a minha avaliação com a do professor 
