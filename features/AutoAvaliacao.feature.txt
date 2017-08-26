@@ -1,3 +1,14 @@
 As a aluno 
 I want to me auto-avaliar
 So that posso comparar a minha avaliação com a do professor 
+
+Scenario: preenchimento bem sucedido da auto-avaliação
+    Given O aluno “Leo” requisite sua  auto-avaliação
+    When “Leo” preenche a sua auto-avaliação
+    Then   o sistema armazena a informação
+
+Scenario: preenchimento mal sucedido da auto-avaliação GUI
+    Given que eu estou na página de auto-avaliação
+    When eu submeto a auto-avaliação
+	And não preencho o campo “Entender conceitos de requisitos”
+    Then eu recebo uma mensagem de erro informando o campo que não foi preenchido
